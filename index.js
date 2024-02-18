@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 // const urlRoute = require("./routes/urlRoute");
-app.use("/api", authMiddleware.restictToLoginUserOnly, urlroutes);
+app.use("/api", authMiddleware.checkForauthorization, urlroutes);
 app.use("/user", userroutes);
 app.get("/", async (req, res) => {
   try {
