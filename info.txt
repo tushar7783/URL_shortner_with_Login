@@ -1,3 +1,10 @@
 first run npm i
 
 check the package named shortid,nanoid from npm (googled it URL: https://www.npmjs.com/package/shortid  URL2:https://zelark.github.io/nano-id-cc/ ) 
+
+
+example .env file
+PORT=
+
+
+JWTKEY=
