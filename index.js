@@ -8,7 +8,7 @@ const { connectMongodb } = require("./connect");
 const cookieParser = require("cookie-parser");
 const authMiddleware = require("./middlware/auth");
 
-connectMongodb("mongodb://127.0.0.1:27017/url-app-1").then(() => {
+connectMongodb("mongodb://127.0.0.1:27017/url-app-2").then(() => {
   console.log("mongodb connect ");
 });
 

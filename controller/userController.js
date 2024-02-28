@@ -11,9 +11,13 @@ exports.signup = async (req, res) => {
       email: email,
       password: password,
     });
-    console.log(result);
+    // console.log(result);
     if (result) {
-      res.status(201).json({ message: "user added sucessfully" });
+      res.status(201).json({
+        message: "user added sucessfully",
+        sucess: true,
+        User: result,
+      });
     }
   } catch (error) {
     console.log(error);
@@ -28,7 +32,9 @@ exports.login = async (req, res) => {
       password: password,
     });
     if (!result) {
-      res.status(400).json({ message: "invalid username and password" });
+      res.status(400).json({
+        message: "invalid username and password",
+      });
     }
 
     // const sessionId = uuidv4();//for cookies
@@ -38,7 +44,7 @@ exports.login = async (req, res) => {
 
     const token = await auth.setUser(result);
     // console.log(token);
-    res.cookie("uid", token); //used to show data ie tokrn in cookies
+    // res.cookie("uid", token); //used to show data ie tokrn in cookies
     res.status(200).json({ mesage: `user login`, token: token });
   } catch (error) {
     console.log(error);
